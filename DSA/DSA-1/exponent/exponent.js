@@ -9,4 +9,5 @@ function calculateExponent(b,p)
     return b*calculateExponent(b,p-1)
     }
 }
+//complexity:O(n)
 console.log(calculateExponent(3,3))

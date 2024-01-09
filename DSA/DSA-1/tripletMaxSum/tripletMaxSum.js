@@ -43,19 +43,36 @@
 // In the third case there are no valid triplets.
 
 let arr=[3 ,7, 4, 2, 5, 7, 5]
-function maxSumTriplet(arr)
+maxSumTriplet(arr)
+maxSumTriplet([3 ,2 ,1])
+function maxSumTriplet(a)
 {
-    let maxSum=-Infinity
-    for(let i=1;i<arr.length;i++)
+    let maxSum=0
+   
+    for(let i=1;i<a.length;i++)
     {
-    let sum=0;
+        let first=-1;
+        let last=-1; 
     for(let j=0;j<i;j++)
     {
-        if(a[j]<a[i])
+        if(a[j]<a[i]  )
         {
-        
+        first=Math.max(first,a[j])
         }
     }
-
+    for(let j=i+1;j<=a.length-1;j++)
+    {
+        if(a[i]<a[j])
+        {
+            last=Math.max(last,a[j])
+        }
     }
+     if(first!=-1 && last!=-1)
+     {
+        maxSum=Math.max(maxSum,first+last+a[i])
+        console.log('triplet','[',first,a[i],last,']')
+     }
+    }
+
+    console.log(maxSum)
 }

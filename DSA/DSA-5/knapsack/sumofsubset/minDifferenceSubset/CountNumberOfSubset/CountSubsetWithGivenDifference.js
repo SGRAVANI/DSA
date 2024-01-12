@@ -14,8 +14,12 @@
 //s1=(sum+diff)/2
 //now find count of s1 in arr means this problem is reduced in count total subset having given target sum
 
+// let arr=[1,1,2,3]
+// let diff=1;
+// let arr=[5,2,6,4]
+// let diff=3
 let arr=[1,1,2,3]
-let diff=1;
+let diff=1
 let sum=arr.reduce((sum,ele)=>sum+ele,0)
 let s1=Math.floor((sum+diff)/2)
 let dp=new Array(arr.length+1)

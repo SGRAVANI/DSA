@@ -12,7 +12,18 @@ for(let i=0;i<dp.length;i++)
     dp[i]=new Array.fill(-1)
 }
 console.log(dp)
-function unboundedKnapsack(price,len,l)
+function unboundedKnapsack(price,len,l,n)
 {
-    
+    if(n==0 && l==0 )
+    {
+        return 1;
+    }
+    if(n>0 && l==0)
+    {
+        return 1;
+    }
+    if(n==0 && l>0)
+    {
+        return 0;
+    }
 }

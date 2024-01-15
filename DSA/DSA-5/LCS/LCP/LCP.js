@@ -35,4 +35,4 @@ for(let i=0;i<dp.length;i++)
     dp[i]=new Array(s2.length+1).fill(-1)
 }
 let lcsLength=lcs(s1,s2,s1.length,s2.length)
-console.log("longst Palindiromc string length is :",lcsLength)
+console.log("longst Palindiromc sequence length is :",lcsLength)

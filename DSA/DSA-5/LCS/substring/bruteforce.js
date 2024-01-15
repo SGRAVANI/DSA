@@ -23,13 +23,15 @@ for(let i=0;i<s1.length;i++)
          s2J++;
          tempAns++
         }
+        console.log(tempAns,subAnsStr)
         if(ans<tempAns)
         {
             ans=tempAns
             ansString=subAnsStr
+            
         }
     }
     }
   
 }
-console.log(ansString,ans)
+console.log("max length sub string: " ,ansString,"\nlength is : ",ans)

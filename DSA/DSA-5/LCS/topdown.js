@@ -17,7 +17,7 @@ function lcsLength(x,y,n,m)
         return dp[n][m]
     }
     else{
-        if(x[n-1]==y[n-1])
+        if(x[n-1]==y[m-1])
         {
             return dp[n][m]=1+lcsLength(x,y,n-1,m-1)
         }

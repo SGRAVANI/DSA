@@ -4,3 +4,5 @@
 
 // Input:   str1 = "geek",  str2 = "eke"
 // Output: "geeke"
+//super sequence: should contains both string sequetially in ordered way in merged string
+

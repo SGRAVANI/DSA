@@ -39,7 +39,7 @@ function lcs(s1,s2,n,m)
     }
     return dp[n][m]
 }
-let lcsLength=lcs(s,t,s1,length,t.length)
+let lcsLength=lcs(s,t,s.length,t.length)
 if(lcsLength==s.length)
 {
     console.log("True...matched",s,"is a subsequence of ",t)

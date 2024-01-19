@@ -54,6 +54,34 @@ function maxSum(arr)
     console.log(dp)
     return dp[arr.length-1]
 }
+function spaceOptimized_MaxSum(arr)
+{
+
+    let prev=arr[0]
+    let prev2=0,cur;
+    for(let i=1;i<arr.length;i++)
+    {
+        
+        let pick,notpick;
+        pick=arr[i]
+        notpick=0
+        if(i-2>=0)
+        {
+            pick=pick+prev2
+        }
+        if(i-1>=0)
+        {
+            notpick=notpick+prev
+        }
+        console.log(pick,notpick)
+       cur=Math.max(pick,notpick)
+       prev2=prev
+       prev=cur
+    }
+    //console.log(dp)
+    return cur;
+}
 let arr=[2 ,5 ,1, 3, 6, 2, 4]
 let maxWealth=maxSum(arr)
-console.log(maxWealth)
+let maxWealth1=spaceOptimized_MaxSum(arr)
+console.log(maxWealth,maxWealth1)

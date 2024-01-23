@@ -76,3 +76,6 @@ let arr=[10,20,30,40,50]
 let st=new SegmentTree(arr)
 console.log(st.tree,arr)
 console.log(st.query(0,0,arr.length-1,1,3))
+st.update(0,0,arr.length-1,2,80)
+console.log(st.tree,arr)
+console.log(st.query(0,0,arr.length-1,1,3))

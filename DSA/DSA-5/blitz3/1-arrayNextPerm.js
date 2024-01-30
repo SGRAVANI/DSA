@@ -48,16 +48,25 @@ function perm(arr,l,h)
     if(l==h-1)
     {
 
-    sol.push(arr)
+    sol.push([...arr])
     }
     for(let i=l;i<h;i++)
     {
-        
-        [arr[i],arr[l]]=[arr[l],arr[i]];
+        let temp=arr[i]
+        arr[i]=arr[l]
+        arr[l]=temp
+        // [arr[i],arr[l]]=[arr[l],arr[i]];
         console.log(arr[i],arr[l])
         perm(arr,l+1,h)  
-        [arr[i],arr[l]]=[arr[l],arr[i]];     
+        // [arr[i],arr[l]]=[arr[l],arr[i]];     
+        temp=arr[i]
+        arr[i]=arr[l]
+        arr[l]=temp
     }
 }
 perm(arr,0,arr.length)
+for(let i=0;i<sol.length;i++)
+{
+    
+}
 console.log(sol)

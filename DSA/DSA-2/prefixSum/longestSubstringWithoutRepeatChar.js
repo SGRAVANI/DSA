@@ -27,3 +27,33 @@
 
 
 // Checklist
+//bbrute force
+function isUnique(str)
+{
+    let s=new Set(str);
+    if(str.length==s.size)
+    {
+        return true
+    }
+    else{
+        return false
+    }
+}
+let str="aabcccbcb"
+let sub=""
+let maxL=0
+for(let i=0;i<str.length;i++)
+{ sub=""
+    for(let j=i;j<str.length;j++)
+    {
+    if(isUnique(str.slice(i,j+1)))
+    {
+      sub+=str[j]
+      maxL=Math.max(maxL,j-i+1)
+    }
+    else{
+        break;
+    }
+}
+}
+console.log(maxL)

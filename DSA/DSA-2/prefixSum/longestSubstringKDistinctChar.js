@@ -47,3 +47,13 @@
 // Resources
 // Longest Substring with At Most K Distinct Characters
 // Pattern Introduction
+function longestSubstringWithKdistictChar(str)
+{
+    let m={}
+    let left=0
+    let right=0
+    while(right<str.length)
+    {
+        
+    }
+}

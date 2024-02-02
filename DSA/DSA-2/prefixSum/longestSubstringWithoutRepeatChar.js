@@ -98,4 +98,35 @@ function usingMap(str)
     console.log(s)
 return maxL
 }
-console.log(usingMap(str))
+function usingMap2(str)
+{
+    let m={}
+    let left=0
+    let right=0
+    let s=''
+    let maxL=0
+    while(right<str.length)
+    {
+        if(!m.hasOwnProperty(str[right]))
+        {
+            if(maxL<right-left+1)
+            {
+                maxL=right-left+1
+                s=str.slice(left,right+1)
+                
+            }
+            m[str[right]]=1
+            right++;
+        }
+        else{
+            while(m[str[right]]==1)
+            {
+                delete m[str[left]];
+                left++;
+            }
+        }
+    }
+    console.log(s)
+    return maxL;
+}
+console.log(usingMap2(str))

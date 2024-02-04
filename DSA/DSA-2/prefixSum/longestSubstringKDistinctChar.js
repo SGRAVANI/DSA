@@ -47,13 +47,40 @@
 // Resources
 // Longest Substring with At Most K Distinct Characters
 // Pattern Introduction
-function longestSubstringWithKdistictChar(str)
+function longestSubstringWithKdistictChar(str,k)
 {
-    let m={}
+    let m=new Map()
     let left=0
     let right=0
+    let s=""
+    let maxL=0
+    console.log(m.size)
     while(right<str.length)
     {
-        
-    }
+       m.set(str[right],m.get(str[right])?m.get(str[right])+1:1)
+       while(m.size>k)
+       {
+        if(m.get(str[left])==1)
+        {
+            m.delete(str[left])
+            left++;
+        }
+        else{
+            m.set(str[left],m.get(str[left])-1)
+            left++;
+        }
+       }
+       if(maxL<right-left+1)
+       {
+        maxL=right-left+1
+        s=str.slice(left,right+1)
+       }
+       right++
+       }
+    
+    console.log(m)
+    console.log(s)
 }
+let str="abacdeefghi"
+let k=4
+longestSubstringWithKdistictChar(str,k)

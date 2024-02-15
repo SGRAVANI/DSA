@@ -1,25 +1,36 @@
-let arr=[2, 3, 1, -4, 0, 6]
-let prefix=[]
-prefix.push(arr[0])
-for(let i=1;i<arr.length;i++)
+// Given an unsorted array, sort it in wave form. That is, reorder it such that nums[0] <= nums[1] >= nums[2] <= nums[3]....
+
+// Input format
+// There are 2 lines of input.
+
+// First line contains an integer N ,the number of input integers in the array.
+
+// Second line contains N space separated integers.
+
+// Output format
+// N space separated elements which satisfy the given condition.
+
+// Sample Input 1
+// 6
+
+// 1 5 1 1 6 4
+
+// Sample Output 1
+// 1 4 1 5 1 6
+
+// Explanation 1
+// nums[0] <= nums[1] >= nums[2] <= nums[3] >= nums[4] <= nums[5].
+let nums=[1, 5, 1, 1, 6, 4]
+for(let i=1;i<nums.length;i+=2)
 {
-    prefix[i]=prefix[i-1]+arr[i]
+  if(nums[i]<nums[i-1])
+  {
+    [nums[i],nums[i-1]]=[nums[i-1],nums[i]]
+  }
+  if(nums[i]<nums[i+1])
+  {
+    [nums[i],nums[i+1]]=[nums[i+1],nums[i]]
+  }
 }
-console.log(prefix)
-let m={}
-let maxStart=-Infinity
-let maxEnd=-1
-for(let i=0;i<prefix.length;i++)
-{
-    if(m.hasOwnProperty(prefix[i]))
-    {
-    
-      maxStart=m[prefix[i]];
-      maxEnd=i;
-    }
-    else{
-       m[prefix[i]]=i;
-    }
-}
-console.log(maxStart,maxEnd)
-console.log(arr.slice(maxStart+1,maxEnd+1))
+
+console.log(nums)

@@ -1,4 +1,5 @@
 //serch element from matrix which is sorted by row and column
+//intutiion start searching with upper right corner of row 1 of matrix
 let matrix=[
 [1 ,5, 9],
 [10, 11, 13],

@@ -29,7 +29,7 @@
 
 // Explanation 2
 // The given number is 13 (00001101), it should be converted to 14 (00001110).
-let n=22
+let n=13
 function findMask(pos)
 {
     return 1<<pos;
@@ -49,8 +49,28 @@ else{
 
 for(let i=0;i<=31;i+=2)
 {
-let evenBit=findBit(n,i)
-let oddBit=findBit(n,i+1);
+ let evenBit=findBit(n,i)
+ let oddBit=findBit(n,i+1);
+// let evenBit,oddBit;
+// let bit1=n&(1<<i)
+// if(bit1==0)
+// {
+//     evenBit=0
+// }
+// else {
+//     evenBit=1
+// }
+// //let evenBit=n&(1<<i)==0?0:1
+// let nbit=i+1;
+// let bit2=n&(1<<nbit)
+// if(bit2==0)
+// {
+//     oddBit=0
+// }
+// else{
+//     oddBit=1
+// }
+//let oddBit=n&(1<<nbit)==0?0:1;
 console.log(oddBit,evenBit)
 if(evenBit!=oddBit)
 {

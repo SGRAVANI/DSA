@@ -93,6 +93,11 @@ console.log(g)
 // console.log(h.data)
 let source=0
 let d=new Array(v).fill(Infinity);
+let path=[]
+for(let i=0;i<v;i++)
+    {
+  path[i]=i
+    }
 d[source]=0
 h.insert([0,0])
 while(h.data.length!=0)
@@ -109,8 +114,10 @@ while(h.data.length!=0)
                         d[ver]=newD;
                         let pair=[ver,newD]
                         h.insert(pair)
+                        path[n]=vertex
                     }
             }
 
     }
     console.log(d)
+    console.log(path)
